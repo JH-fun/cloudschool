@@ -1,0 +1,39 @@
+<div ui-content-for="title">
+  <span>详细信息</span>
+</div>
+
+  <div class="scrollable-content" ui-scroll-bottom='bottomReached()' ng-controller='showDetailsController'>
+    <div class="list-group">
+    <p class="list-group-item" ">
+       名称： {{ gradegroupPojobyuser.gradeGroup }} 
+      </p>
+     
+      <p class="list-group-item">
+        编号：{{ gradegroupPojobyuser.gradeGroupnumber }} 
+      </p>
+      <!--  <p class="list-group-item" ">
+       学校： {{ gradegroupPojobyuser.school }} 
+      </p> -->
+      </div>
+      
+      <!-- <div class="list-group">
+       <p class="list-group-item" >
+       班级： 
+      </p>
+      <p class="list-group-item" ag-repeat="banjiList">
+          ---班级名称：{{ gradegroupPojobyuser.banji.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ---创建时间：
+      </p>
+      </div>
+      
+      <div class="list-group">
+       <p class="list-group-item" ">
+       习题：
+      </p>
+      <p class="list-group-item" ag-repeat="banjiList">
+          ---习题名称：{{ gradegroupPojobyuser.exercise.name }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ---创建时间：
+      </p>
+      </div> -->
+     
+   </div></html>

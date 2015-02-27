@@ -1,0 +1,73 @@
+<div ui-content-for="title">
+  <span>注册</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section" ng-controller="registerController">
+   
+  <form name="regform"role="form" ng-submit='regist()'>
+    <fieldset>
+      <legend>注册</legend>
+        <div class="form-group ">
+          <label>用户名</label>
+          <input type="input"
+          		 required
+          		 ng-minlength="6"
+          		 ng-maxlength="16"
+                 ng-model="user.name"
+                 class="form-control"
+                 placeholder="请在这里输入您的用户名…">
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+          <input type="password" 
+          		 ng-model="user.password"
+          		 required
+          		 ng-minlength="6"
+          		 ng-maxlength="16"
+                 class="form-control"
+                 placeholder="请在这里再次输入您的密码…">
+        </div>
+        <div class="form-group">
+          <label>重复密码</label>
+          <input type="password" 
+          		 ng-model="user.repassword"
+          		 required
+          		 ng-minlength="6"
+          		 ng-maxlength="16"
+          		 ng-blur="showpass()"
+          		 ng-focus="hidepass()"
+                 class="form-control"
+                 placeholder="请在这里再次输入您的密码…">
+           <p ng-show="passreg">两次输入的密码不一致</p>
+        </div>
+        <div class="form-group  ">
+          <label>电子邮箱</label>
+          <input type="email"
+                 ng-model="user.email"
+                 class="form-control"
+                 placeholder="请在这里输入您的邮箱…">
+        </div>
+		<div class="form-group">
+          <label>班级</label>
+          <select ng-model="banji" >
+          	<option ng-repeat="banji in banjiList" value="{{banji.id}}">
+          	{{banji.name}}
+          	</option>
+          </select>
+        </div>
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block">
+      注册
+
+    </button>
+
+    <div ui-content-for="navbarAction">
+      <a class='btn'  ng-href="index.html#/login">返回</a>
+    </div>
+
+  </form>
+ </div>
+</div>

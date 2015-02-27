@@ -1,0 +1,71 @@
+<div class="scrollable" ng-controller="ClassNewsController">  
+  <div class="scrollable-content">
+
+    <div class="list-group text-center">
+      <div class="list-group-item list-group-item-home">
+        <h1>班级消息</h1>
+      </div>
+            <div class="list-group-item list-group-item-home media">
+			        <div>
+			          <table class="table" >
+			   				<tr>
+			   					<td width="30%">
+			   						<div style="padding: 5px 5px 5px 5px"><img class="img-thumbnail "  src="{{str}}" ></div>
+			   					</td>
+			   					<td width="70%">
+										<div >
+										<p style="font-size: 20px">最新班级消息<p>
+										<p >{{ newsPojodetail.name }}</p>
+										<p>
+											<a class="btn" ng-click="newsdetail(newsPojodetail.newsid)"  style="float: right;">查看详情 »</a>
+										</p>
+										</div>
+								</td>
+			   				</tr>
+			   			</table>
+			   			   			<p><a class="btn btn-primary btn-large" href="index.html#/url_news_list" style="float: right ;">查看历史记录</a></p>
+			  </div>
+        
+        		</div>
+   
+      <div class="list-group-item list-group-item-home media">
+             <div class="media-body">
+	            <a class="list-group-item" href="index.html#/login">
+		       		 <h3>照片视频分享</h3> <i class="fa fa-chevron-right pull-right"></i>
+		      	</a>
+	        </div>
+      	<div>
+			<div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+			    <div class="list-group">
+			      <a ng-repeat="item in albumList" class="">
+			        <img class="img-thumbnail "  src="{{item.content}}" >
+			      </a>
+			    </div>
+		  </div>
+   			<p><a class="btn btn-primary btn-large" href="index.html#/url_album_list" style="float: right ;">查看更多»</a></p>
+      </div>
+
+      </div>
+        
+      <div class="list-group-item list-group-item-home media">
+        <div class="media-body">
+            <a class="list-group-item" href="index.html#/copyofzuoye">
+       <h3> 作业详解</h3> <i class="fa fa-chevron-right pull-right"></i>
+      	</a>
+        </div>
+        <div class="text-left" style="padding: 5px 0px 5px 20px">
+        	<div class="list-group">
+		      <a ng-repeat="item in zuoyeList" class="list-group-item">
+		        {{ item.name }}<i class="fa fa-chevron-right pull-right"></i>
+		      </a>
+		    </div>
+        	
+        </div>
+        <br/>
+        <br/>
+        <p><a class="btn btn-primary btn-large" href="index.html#/url_zuoye_list" style="float: right ;">&nbsp;&nbsp;&nbsp;查看更多&nbsp;&nbsp;</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div ui-content-for="title">
+  <span>添加消息</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+   
+  <form role="form" ng-submit='submit()' ng-controller="insertnewsController">
+    <fieldset>
+      <legend>添加消息</legend>
+      	<div class="form-group">
+            <label>内容</label>
+<!--             <input type="text" style="height: 100px;" class="form-control" ng-model="name" required> -->
+        	<textarea  class="form-control" ng-model="name" required rows="5" cols="3"></textarea>
+        </div>
+        
+<!--         <div class="form-group"> -->
+<!--           <label>发送消息的人</label> -->
+<!--           <select ng-model="newsfrom" > -->
+<!--           	<option ng-repeat="newsfrom in memberList" value="{{newsfrom.id}}"> -->
+<!--           	{{newsfrom.name}} -->
+<!--           	</option> -->
+<!--           </select> -->
+<!--         </div> -->
+        
+        <div class="form-group">
+          <label>接收消息的用户</label>
+          <select ng-model="newsto" >
+          	<option ng-repeat="newsto in memberList" value="{{newsto.id}}">
+          	{{newsto.name}}
+          	</option>
+          </select>
+        </div>
+        
+        
+<!--         <div class="form-group"> -->
+<!--             <label>编号</label> -->
+<!--             <input type="text" class="form-control" ng-model="number" required> -->
+<!--         </div> -->
+
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block">
+      提交
+    </button>
+
+    <div ui-content-for="navbarAction">
+      <a class='btn' ng-click='submit()'>提交</a>
+    </div>
+
+  </form>
+ </div>
+</div>

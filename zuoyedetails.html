@@ -1,0 +1,25 @@
+<div ui-content-for="title">
+  <span>详细信息</span>
+</div>
+
+  <div class="scrollable-content">
+    <div class="list-group">
+      <p class="list-group-item">
+       时间： {{ zuoyePojodetail.shijian |date:"yy年MM月dd日 HH:mm:ss" }} 
+      </p>
+      <p class="list-group-item">
+        科目：{{ zuoyePojodetail.subject }} 
+      </p>
+      <p class="list-group-item">
+        内容：{{ zuoyePojodetail.neirong }} 
+      </p>
+      <p class="list-group-item">
+        备注：{{ zuoyePojodetail.beizhu }} 
+      </p>
+      <p class="list-group-item">
+        班级：{{ zuoyePojodetail.banji }} 
+      </p>
+      
+      
+    </div>
+   </div>

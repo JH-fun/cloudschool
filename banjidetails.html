@@ -1,0 +1,23 @@
+<div ui-content-for="title">
+  <span>详细信息</span>
+</div>
+
+  <div class="scrollable-content" ui-scroll-bottom='bottomReached()' ng-controller='showDetailsController'>
+    <div class="list-group">
+      <p class="list-group-item" ng-click="fun()">
+       简介： {{ banjiPojobyuser.jianjie }} 
+      </p>
+      <p class="list-group-item">
+        地址：{{ banjiPojobyuser.address }} 
+      </p>
+      <p class="list-group-item">
+        编号：{{ banjiPojobyuser.number }} 
+      </p>
+      <p class="list-group-item">
+        年级组：{{ banjiPojobyuser.gradeGroup }} 
+      </p>
+      <p class="list-group-item">
+        学校：{{ banjiPojobyuser.school }} 
+      </p>
+    </div>
+   </div>

@@ -1,0 +1,40 @@
+<div ui-content-for="title">
+  <span>详细信息</span>
+</div>
+
+  <div class="scrollable-content">
+    <div class="list-group">
+      <p class="list-group-item">
+       发送时间： {{ newsPojodetail.fasongshijian |date:"yy年MM月dd日 HH:mm:ss" }} 
+      </p>
+      <p class="list-group-item">
+        发送消息的人：{{ newsPojodetail.fasongren }} 
+      </p>
+      <p class="list-group-item">
+        内容：{{ newsPojodetail.name }} 
+      </p>
+      
+        <form role="form" ng-submit='submit()' ng-controller="insertnewsaaaController">
+		    <fieldset>
+		      	<div class="form-group">
+		            <label>内容</label>
+		        	<textarea  class="form-control" ng-model="name" required rows="5" cols="3"></textarea>
+		        </div>
+		        <input type="hidden" class="form-control" ng-model="newsto"  value="{{jieshouid}}">
+		    
+		    </fieldset>
+		    <hr>
+		
+		    <button class="btn btn-primary btn-block">
+		      提交
+		    </button>
+		
+		    <div ui-content-for="navbarAction">
+		      <a class='btn' ng-click='submit()'>提交</a>
+		    </div>
+		
+		  </form>
+      
+      
+    </div>
+   </div>

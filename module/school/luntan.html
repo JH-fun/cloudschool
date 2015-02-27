@@ -1,0 +1,33 @@
+<div ui-content-for="title" ng-controller="SchoolController">
+</div>
+<div class="scrollable-content">
+<div class="list-group text-left">
+<div class="list-group-item list-group-item-home media">
+	<div class="list-group-item "  >
+	<span>主题列表</span>
+	   		<table table align="center"  ng-repeat="item in motifList" >
+		          			<tr >
+		          				<td width="20%">
+		          					<div class="text-center">
+		          						<img class="img-circle "  ng-src="image/school.jpg"  style="width: 60px;height: 60px" >
+		          						<p>{{item.yonghu.name}}</p>
+		          					</div>
+		          				</td>
+		          				<td width="60%">
+		          					<div style="padding:5px 0px 0px 30px">
+		          						<a ng-click="saveSelectIndex(item.id)" href="index.html#/luntandetails"><h3>{{item.name}}</h3></a>
+		          						<small><p>&nbsp;&nbsp;&nbsp;&nbsp; {{item.fabushijian |date:"MM-dd hh:mm"}}</p></small>
+		          					</div>
+		          				</td>
+		          				<td width="20%">
+		          						<div class="text-center">
+		          						<h3 >{{item.huiReplies.length}}</h2>
+		          						<small><p>热论中</p></small>
+		          						</div>
+		          				</td>
+		          			</tr>
+		          		</table>
+	</div>
+</div>
+</div>
+</div>

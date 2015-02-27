@@ -1,0 +1,46 @@
+<div ui-content-for="title">
+  <span>用户登录</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section"  ng-controller="loginController">
+   
+  <form name="loginregform" role="form" ng-submit='userlogin()'>
+    <fieldset>
+      <legend>登录</legend>
+        <div class="form-group ">
+          <label>用户名</label>
+          <input type="input"
+                 ng-model="yonghuming"
+                 required
+          		 ng-minlength="6"
+          		 ng-maxlength="16"
+                 class="form-control"
+                 placeholder="请在这里输入您的用户名…">
+        </div>
+
+        <div class="form-group">
+          <label>密码</label>
+          <input type="password" 
+                 ng-model="mima"
+          		 required
+          		 ng-minlength="6"
+          		 ng-maxlength="16"
+                 class="form-control"
+                 placeholder="请在这里再次输入您的密码…">
+        </div>
+
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block">
+      登录
+    </button>
+
+    <div ui-content-for="navbarAction">
+      <a class='btn' ng-href="index.html#/register">注册</a>
+    </div>
+
+  </form>
+ </div>
+</div>
