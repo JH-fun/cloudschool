@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="applicationContext-pojo.xsl"?>
+<project>
+	<name>myTestProject</name>
+	<cname>测试项目</cname>
+	<id>123456</id>
+	<annotation>这是一个测试项目</annotation>
+	<dataBase id="" name="psql" driverClass="org.postgresql.Driver" jdbcUrl="jdbc:postgresql://localhost:5432/mytest" 
+		userName="postgres" passWord="postgres" maxPoolSize="10" />
+	<pojos>
+		<pojo id="1" name="TStudent" cname="学生" package="cn.canetwork.pojo" extends="cn.crazyasp.TObject">
+			<annotation>学生信息</annotation>
+			<property id="" name="studentNo" cname="学号" type="java.lang.String" length="">
+				<annotation>学生的学号</annotation>
+			</property>
+			<property id="" name="studentSex" cname="性别" type="java.lang.String" length="">
+				<annotation>学生的性别</annotation>
+			</property>
+			<property id="" name="books" cname="拥有的书籍" type="java.util.Set" length="">
+				<annotation>学生所拥有的书籍</annotation>
+				<relation er-type="one_to_many" pojo="cn.canetwork.pojo.TBook" pojo-property="student" cascade="delete" />
+			</property>
+			<property id="" name="subjects" cname="学生学习的课程" type="java.util.Set" length="">
+				<annotation>该学生所修的所有课程</annotation>
+				<relation er-type="many_to_many_from" pojo="cn.canetwork.pojo.TSubject" pojo-property="students" cascade="none" />
+			</property>
+		</pojo>
+		<pojo id="2" name="TSubject" cname="课程" package="cn.canetwork.pojo" extends="cn.crazyasp.TObject">
+			<annotation>课程信息</annotation>
+			<property id="" name="subjectNo" cname="课程编号" type="java.lang.String" length="">
+				<annotation>课程的学号</annotation>
+			</property>
+			<property id="" name="students" cname="选择该课程的学生" type="java.util.Set" length="">
+				<annotation>选择了该课程的所有学生</annotation>
+				<relation er-type="many_to_many_to" pojo="cn.canetwork.pojo.TStudent" pojo-property="subjects" cascade="none" />
+			</property>
+		</pojo>
+		<pojo id="3" name="TBook" cname="书籍" package="cn.canetwork.pojo" extends="cn.crazyasp.TObject">
+			<annotation>书籍信息</annotation>
+			<property id="" name="price" cname="价格" type="java.lang.String" length="">
+				<annotation>书的价格</annotation>
+			</property>
+			<property id="" name="student" cname="书籍的拥有者" type="cn.canetwork.pojo.TStudent" length="">
+				<annotation>书籍的拥有者</annotation>
+				<relation er-type="many_to_one" pojo="cn.canetwork.pojo.TStudent" pojo-property="books" />
+			</property>
+		</pojo>
+	</pojos>
+</project>
